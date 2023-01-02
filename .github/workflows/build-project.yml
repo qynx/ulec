@@ -2,8 +2,6 @@ name: 构建插件内容
 
 on:
   push: 
-    branches:
-      - master
     tags:
       - "v*"
 
