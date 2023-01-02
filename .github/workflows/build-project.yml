@@ -1,0 +1,42 @@
+name: 构建插件内容
+
+on:
+  push: 
+    branches:
+      - master
+    tags:
+      - "v*"
+
+jobs:
+  build-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.17.1
+      
+      - name: 设置 Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'pnpm'
+      
+      - name: '安装依赖'
+        run: pnpm install --frozen-lockfile
+
+      - name: '构建'
+        run: pnpm run build
+      
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          name: Release ${{ github.ref }}
+          files: |
+            dist/*
