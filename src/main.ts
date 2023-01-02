@@ -11,4 +11,5 @@ const app = createApp(App)
 Message._context = app._context
 app.use(ArcoVue, {componentPrefix: 'arco'})
 app.use(ElementPlus)
+
 app.mount('#app')
