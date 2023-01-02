@@ -1,0 +1,22 @@
+{
+	"main": "index.html",
+	"logo": "logo.png",
+	"features": [
+        {
+            "code": "ulec",
+            "explain": "ulec",
+              "cmds":["ulec"]
+        }
+	],
+    "development": {
+        "main": "http://127.0.0.1:5173/",
+        "logo": "logo.png",
+        "features": [
+            {
+              "code": "ulec_dev",
+              "explain": "ulec",
+                "cmds":["ulec"]
+            }
+        ]
+    }
+}
