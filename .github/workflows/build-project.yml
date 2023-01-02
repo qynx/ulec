@@ -2,8 +2,8 @@ name: 构建插件内容
 
 on:
   push: 
-    tags:
-      - "v*"
+    branches:
+      - main
 
 jobs:
   build-project:
