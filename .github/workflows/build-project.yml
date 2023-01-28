@@ -3,7 +3,7 @@ name: 构建插件内容
 on:
   push: 
     branches:
-      - main
+      - release
 
 jobs:
   build-project:
@@ -38,7 +38,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          name: Release ${{ github.ref }}
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
           files: |
             ${{ steps.get_version.outputs.VERSION }}}.zip
