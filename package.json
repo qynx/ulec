@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@arco-design/web-vue": "^2.40.1",
+    "@types/js-md5": "^0.7.0",
     "element-plus": "^2.2.27",
+    "js-md5": "^0.7.3",
     "moment": "^2.29.4",
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

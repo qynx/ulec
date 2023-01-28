@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { InputTag } from '@arco-design/web-vue';
 import { ref } from 'vue'
-import moment from 'moment'
 import TimeTool from './TimeTool.vue'
 import { ElMessage } from 'element-plus';
 
@@ -38,7 +36,11 @@ const remove = function(id:number) {
     <arco-space v-for="item in arrays" :key="item">
       <span class="span">{{ item }}</span>
       <TimeTool />
-      <arco-button type="text" @click="add">add</arco-button>
+      <arco-button type="text" @click="add">
+        <template #icon>
+          <icon-plus-circle-fill />
+        </template>add
+      </arco-button>
       <arco-button type="text" @click="remove(item)">
         <template #icon>
         <icon-delete />
